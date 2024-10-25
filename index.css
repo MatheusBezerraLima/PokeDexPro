@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: rgb(5,60,4);
+background: linear-gradient(180deg, rgba(5,60,4,0.8813900560224089) 1%, rgba(39, 171, 39, 0.956) 97%);
+}
+.container{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    background: rgb(4,5,60);
+    background: linear-gradient(180deg, rgba(10, 5, 108, 0.881) 1%, rgba(32, 32, 163, 0.859) 47%, rgba(40, 59, 136, 0.797) 97%);
+    /* animation: mudar-fundo 1s linear  ; */
+}
+
+.fundo-dia{
+    background: rgb(4,5,60);
+    background: linear-gradient(180deg, rgba(59, 122, 182, 0.881) 1%, rgba(38,98,157,0.8589810924369747) 47%, rgba(135, 205, 229, 0.797) 97%);
+}
+.fundo-noite{
+    background: rgb(4,5,60);
+    background: linear-gradient(180deg, rgba(10, 5, 108, 0.881) 1%, rgba(32, 32, 163, 0.859) 47%, rgba(40, 59, 136, 0.797) 97%);
+}
+
+.pipe{
+    position: absolute;
+    width: 80px;
+    bottom: 0;
+    /* left: 120px; */
+    animation: pipe-move 1.2s infinite linear;
+}
+
+@keyframes pipe-move {
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+.mario{
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    /* animation: Up 1s ease-out; */
+    /* bottom: 120px; */
+}
+
+@keyframes Jump {
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 200px;
+    }
+    50%{
+        bottom: 200px;
+    }
+    60%{
+        bottom: 200px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.jump{
+    animation: Jump 500ms ease-out;
+}
+
+.nuvens{
+    position: absolute;
+    width: 550px;
+    animation: move-clouds 45s infinite linear;
+}
+
+@keyframes move-clouds {
+    from{
+        right: -550px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+.sol{
+    width: 200px;
+    right: -200px;
+    top: 10px;
+    visibility: hidden;
+    height: 200px;
+    border-radius: 100%;
+    position: absolute;     
+    box-shadow: 0px 0px 120px rgb(255, 183, 0);
+    background: rgb(252,171,67);
+    background: radial-gradient(circle, rgba(252,171,67,1) 0%, rgba(252,171,67,1) 50%, rgba(255,254,0,0.9626225490196079) 100%);
+}
+
+.sol-move{
+    animation: sol-move 90s linear;
+}
+@keyframes sol-move {
+    from{
+        right: -200px;
+        visibility: visible;
+    }
+    to{
+        right: 100%;
+    }
+}
+.lua{
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    border-radius: 100%;
+    position: absolute;
+    top: 10px;
+    right: 100%;
+    visibility: hidden;
+    box-shadow: 0px 0px 120px rgb(218, 216, 210);
+}
+.aparecer{
+    animation: lua-move 90s linear;
+}
+@keyframes lua-move {
+    from{
+        visibility: visible;
+        right: -200px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: yellow
+    }
+    .container{
+        width: 100%;
+        height: 30vh;
+        position: relative;
+        overflow: hidden;
+        background: rgb(4,5,60);
+        background: linear-gradient(180deg, rgba(10, 5, 108, 0.881) 1%, rgba(32, 32, 163, 0.859) 47%, rgba(40, 59, 136, 0.797) 97%);
+        /* animation: mudar-fundo 1s linear  ; */
+        border-bottom: 20px solid green ;
+    }
+    .botao-jump{
+        visibility: visible;
+        position: absolute;
+        bottom:10vh;
+        width: 80%;
+        height: 100px;
+        font-size: 2em;
+        border-radius: 1em ;
+        background-color: rgb(225, 17, 17);
+        color: aliceblue;
+        cursor: pointer;
+    }
+    .nuvens{
+        width: 200px;
+    }
+    @keyframes move-clouds {
+        from{
+            right: -200px;
+        }
+        to{
+            right: 100%;
+        }
+    }
+    .mario{
+        width:80px;
+    }
+    .pipe{
+        width: 40px;
+    }
+    .sol{
+        width: 80px;
+        height: 80px;
+        right: 80px;
+    }
+
+    @keyframes sol-move {
+        from{
+            right: -80px;
+            visibility: visible;
+        }
+        to{
+            right: 100%;
+        }
+    }
+    .lua{
+        width: 80px;
+        height: 80px;
+    }
+    @keyframes lua-move {
+        from{
+            visibility: visible;
+            right: -80px;
+        }
+        to{
+            right: 100%;
+        }
+    }
+    @keyframes Jump {
+        0%{
+            bottom: 0;
+        }
+        40%{
+            bottom: 100px;
+        }
+        50%{
+            bottom: 100px;
+        }
+        60%{
+            bottom: 100px;
+        }
+        100%{
+            bottom: 0;
+        }
+    }
+    
+    .jump{
+        animation: Jump 500ms ease-out;
+    }
+}

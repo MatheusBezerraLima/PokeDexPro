@@ -1,16 +1,116 @@
-<!-- HTML DA PAGINA PRINCIPAL -->
- <!DOCTYPE html>
- <html lang="pt-br">
- <head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/standard.css">
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/108acab114.js" crossorigin="anonymous" defer></script>
 
-    <title>PokéDex Pro | Home </title>
- </head>
- <body>
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script src="../js/main.js"></script>
+   
+    <title>Pokemon main | Pokédex Pro</title>
+</head>
+<body>
+    <!-- <div class="pokemon-card" onclick="openPokemonPage('Bulbasaur', '1')">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
+        <div class="pokemon-info">
+            <p class="name">Bulbasaur</p>
+            <p class="id">#001</p>
+        </div>
+    </div> -->
+
+    <header>
+        <nav>
+            <ul>
+                <li>About</li>
+                <li>Pokedex</li>
+                <li>Batalha</li>
+            </ul>
+            <img src="../images/logoHeader.png" alt="">
+            <ul>
+                <li>About</li>
+                <li>Pokedex</li>
+                <li>Batalha</li>
+            </ul>
+        </nav>
+    </header>
     
+    <main>
+            <div class="gallery">
+                <img id="image-left" data-color="#60c950" class="gallery-imageleft" src="../images/bubassaurMain.png" alt="">
 
- </body>
- </html>
+                <img id="image-center" data-color="#FF5B17" class="gallery-imagecenter" src="../images/charizardMain.png" alt="">
+
+                <img id="image-right"  data-color="#55b4f8" class="gallery-imageright" src="../images/squirtleMain.png" alt="">
+            </div>
+
+        <div class="social-links">
+            <a href="">
+                <img src="../images/logoGitHub.png" alt="">
+            </a>
+            
+            <a href="">
+                <img src="../images/logoLinkedin.png" alt="">
+            </a>
+            
+            <a href="">
+                <img src="../images/logoInstagram.png" alt="">
+            </a>
+            
+        </div>
+        
+    </main>
+
+    <section class="regions-pokemon">
+        <div class="title-section">
+            <h1>Regiões</h1>
+            <p>O universo Pokémon é composto por diversas regiões, cada uma com características únicas, sua geografia, Pokémon exclusivos e histórias distintas. Abaixo está a lista de todas as principais regiões presentes nos jogos e na franquia:</p>
+        </div>
+
+        <div class="box-regions">
+            <i class="fa-solid fa-angle-left icon-angle "></i>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Kanto</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Johto</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Hoenn</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Sinnoh</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Unova</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Kalos</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Alola</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Galar</p>
+            </div>
+            <div class="card-region">
+                <img src="../images/Kanto.jpg" alt="">
+                <p>Paldea</p>
+            </div>
+            <i class="fa-solid fa-angle-right icon-angle"></i>
+        </div>
+    </section>
+</body>
+</html>

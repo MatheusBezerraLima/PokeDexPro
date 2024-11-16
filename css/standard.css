@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+
     /* font-family: ; - Definir */ 
 }
 
@@ -24,7 +26,10 @@ a {
     color: #0056b3;
   }
 
-
+li{
+  list-style: none;
+  cursor: pointer;
+}
 
 
 /* DEIXAR AS IMAGENS RESPONSIVAS */
@@ -34,3 +39,41 @@ img {
     display: block;
   }
   
+  header{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    z-index: 999;
+
+    & nav{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 5rem;
+        /* font-weight: bold; */
+
+        & ul{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+            height: 100%;
+            font-size: 1.5rem;
+
+            & li{
+              transition: all 0.3s ease-in-out;
+            }
+
+            & li:hover{
+              margin-bottom: 0.8rem;
+              color: #1c1c1c;
+            }
+        }
+    }
+}

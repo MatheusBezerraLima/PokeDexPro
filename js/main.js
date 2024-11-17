@@ -87,3 +87,57 @@ const teste = () => {
 // Inicia o loop infinito com intervalo de 5 segundos
 setInterval(Carousel, 5000);
 
+
+var currentIndex = 4 
+
+const moveCardRegions = (event) =>{
+    const slider = document.querySelector('.box-regions')
+    const cardsSlider = slider.children
+    const cardWidth = cardsSlider[0].offsetWidth
+
+    const fontSizeRoot = parseFloat(window.getComputedStyle(document.documentElement).fontSize); // Pega o font-size em pixels do root (html)
+    const gap = 0.8 * fontSizeRoot;
+
+    console.log(event);
+    
+    if(event.classList.contains('fa-angle-right')){
+        currentIndex++
+
+        const leftIcon = document.querySelector('.fa-angle-left')
+        leftIcon.style.display = 'block'
+
+        slider.scrollTo({
+            left: slider.scrollLeft +  (cardWidth + gap),
+            behavior: "smooth"
+        });
+
+        if(currentIndex == 9){
+            event.style.display = 'none'
+        }
+
+    }else{
+        currentIndex--
+
+        const rightIcon = document.querySelector('.fa-angle-right')
+        rightIcon.style.display = 'block'
+
+        slider.scrollTo({
+            left: slider.scrollLeft -  (cardWidth + gap),
+            behavior: "smooth"
+        });
+
+        if(currentIndex == 4){
+            event.style.display = 'none'
+        }
+
+    }
+    
+
+}
+
+
+const expandContentRegion = (nameRegion) =>{
+    const cardRegion = document.querySelector(`#${nameRegion}`)
+    console.log(cardRegion);
+    
+}

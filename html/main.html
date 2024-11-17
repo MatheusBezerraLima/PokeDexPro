@@ -68,49 +68,74 @@
     <section class="regions-pokemon">
         <div class="title-section">
             <h1>Regiões</h1>
-            <p>O universo Pokémon é composto por diversas regiões, cada uma com características únicas, sua geografia, Pokémon exclusivos e histórias distintas. Abaixo está a lista de todas as principais regiões presentes nos jogos e na franquia:</p>
         </div>
 
-        <div class="box-regions">
-            <i class="fa-solid fa-angle-left icon-angle "></i>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Kanto</p>
+        <div class="contain-region-box">
+            <div class="box-regions">
+                <div id="kanto" class="card-region">
+                    <img src="../images/Kanto.jpg" alt="">
+                    <h3>Kanto</h3>
+                    <p>A terra onde tudo começou! Kanto é conhecida por suas cidades inspiradas em cores e por abrigar os Pokémon icônicos da 1ª geração, como Pikachu e Charizard.</p>
+                    <button type="button" onclick="expandContentRegion('kanto')">Descubra mais</button>
+                </div>
+                <div id="johto" class="card-region">
+                    <img src="../images/johto.jpg" alt="">
+                    <h3>Johto</h3>
+                    <p>Uma região rica em tradição e lendas, com suas torres históricas e Pokémon míticos como Ho-Oh e Lugia. É conectada a Kanto, trazendo nostalgia e mistério.</p>
+                    <button type="button" onclick="expandContentRegion('johto')">Descubra mais</button>
+                </div>
+                <div id="hoenn" class="card-region">
+                    <img src="../images/hoenn.jpg" alt="">
+                    <h3>Hoenn</h3>
+                    <p>Um paraíso tropical com vastos oceanos, florestas exuberantes e vulcões. Lar de Pokémon lendários como Groudon, Kyogre e Rayquaza.</p>
+                    <button type="button" onclick="expandContentRegion('hoenn')">Descubra mais</button>
+                </div>
+                <div id="sinooh" class="card-region">
+                    <img src="../images/sinooh.jpg" alt="">
+                    <h3>Sinnoh</h3>
+                    <p>Uma região montanhosa com forte conexão espiritual. Sinnoh apresenta o Monte Coronet e Pokémon lendários relacionados ao tempo e espaço, como Dialga e Palkia.</p>
+                    <button type="button" onclick="expandContentRegion('sinooh')">Descubra mais</button>
+                </div>
+                <div id="unova" class="card-region">
+                    <img src="../images/unova.jpg" alt="">
+                    <h3>Unova</h3>
+                    <p>Inspirada em Nova York, Unova traz um toque moderno e urbano, com Pokémon exclusivos e uma história cheia de conflitos entre humanos e Pokémon.</p>
+                    <button type="button" onclick="expandContentRegion('unova')">Descubra mais</button>
+                </div>
+                <div id="kalos" class="card-region">
+                    <img src="../images/kalos.jpg" alt="">
+                    <h3>Kalos</h3>
+                    <p>Conhecida por sua beleza e elegância, Kalos é inspirada na França e apresenta a Mega Evolução como novidade, além de Pokémon como Xerneas e Yveltal.</p>
+                    <button type="button" onclick="expandContentRegion('kalos')">Descubra mais</button>
+                </div>
+                <div id="alola" class="card-region">
+                    <img src="../images/alola.jpg" alt="">
+                    <h3>Alola</h3>
+                    <p>Um arquipélago tropical com uma vibe descontraída. Alola introduz formas regionais de Pokémon e celebra a cultura das ilhas e seu lendário Solgaleo.</p>
+                    <button type="button" onclick="expandContentRegion('alola')">Descubra mais</button>
+                </div>
+                <div id="galar" class="card-region">
+                    <img src="../images/galar_rotated.jpg" alt="">
+                    <h3>Galar</h3>
+                    <p>Uma região inspirada no Reino Unido, com estádios grandiosos para batalhas. Galar apresenta o fenômeno Dynamax e lendas sobre os lobos Zacian e Zamazenta.</p>
+                    <button type="button" onclick="expandContentRegion('galar')">Descubra mais</button>
+                </div>
+                <div id="paldea" class="card-region">
+                    <img src="../images/paldea.jpg" alt="">
+                    <h3>Paldea</h3>
+                    <p>Inspirada na Península Ibérica, Paldea mistura tradição e modernidade, com um mundo aberto cheio de aventuras, incluindo a nova forma de evolução Tera Crystal.</p>
+                    <button type="button" onclick="expandContentRegion('paldea')">Descubra mais</button>
+                </div>
             </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Johto</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Hoenn</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Sinnoh</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Unova</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Kalos</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Alola</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Galar</p>
-            </div>
-            <div class="card-region">
-                <img src="../images/Kanto.jpg" alt="">
-                <p>Paldea</p>
-            </div>
-            <i class="fa-solid fa-angle-right icon-angle"></i>
+            <i class="fa-solid fa-angle-left icon-angle" onclick="moveCardRegions(this)"></i>
+            <i class="fa-solid fa-angle-right icon-angle" onclick="moveCardRegions(this)"></i>
         </div>
+    </section>
+
+    <section class="fullContentRegion">
+        <div class="9"></div>
     </section>
 </body>
 </html>
+
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias unde minima tempore, dolore autem animi ipsum sint quibusdam suscipit error similique reprehenderit accusantium aspernatur dolorem blanditiis officiis velit, magni tenetur.

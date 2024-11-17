@@ -1,0 +1,77 @@
+main{
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.box-chat{
+    width: 60vw;
+    height: 85vh;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+.box-messages{
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    height: 85%;
+}
+
+
+/* Estilo geral do contêiner */
+.message-input-container {
+    display: flex;
+    align-items: flex-end; /* Alinha o botão ao topo da textarea */
+    gap: 10px;
+    padding: 10px;
+    background-color: #f4f4f44a;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin: 10px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Campo de entrada */
+  .message-input {
+    flex: 1; /* Faz com que a textarea ocupe o máximo espaço disponível */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    resize: none; /* Desativa o redimensionamento manual */
+    overflow: hidden; /* Garante que não haja barras de rolagem */
+    min-height: 40px; /* Altura inicial */
+    transition: height 0.2s ease; /* Suaviza o ajuste da altura */
+    line-height: 1;
+    background-color: #cccccc00;
+    color: #fff;
+  }
+  
+  /* Botão de envio */
+  .send-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0;
+  }
+  
+  .send-button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -5,42 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="../js/detailsPokemon.js" defer></script>
+    <link rel="stylesheet" href="../css/detailsPokemon.css">
 
     <title>Pokemon main | Pokédex Pro</title>
 
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100dvh;
-            background: url('../images/teste.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-        }
-        .box_gif_pokemon{
-            position: absolute;
-            align-self: flex-end;
-            height: fit-content;
-            right: 100px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .gif_pokemon{
-            width: 700px;
-        }
-    </style>
+
 </head>
 <body>
     <div class="box_gif_pokemon">
-        <img src="" alt="">
+        <img src="../images/charizard-flying.gif" alt="">
+    </div>
+
+    <div class="box-details-pokemon">
+        <div class="fixed-box">
+            <div class="name-id-pokemon">
+                <h1>Rayquaza</h1>
+                <span class="id-pokemon">N° 0987</span>
+            </div>
+            
+            <div class="type-pokemon">
+                <div class="type planta"><p>Planta</p></div>
+                <div class="type fire"><p>Fogo</p></div>
+            </div>
+        </div>
+
+        <div class="slider">
+            <div class="controls">
+              <button data-slide="0" class="disable">Sobre</button>
+              <button data-slide="1" class="disable">Status</button>
+              <button data-slide="2" class="disable">Moves</button>
+            </div>
+            <div class="slides">
+              <div class="slide" id="slide1">Slide 1</div>
+              <div class="slide" id="slide2">Slide 2</div>
+              <div class="slide" id="slide3">Slide 3</div>
+            </div>
+            
+          </div>
+
     </div>
 </body>
 </html>

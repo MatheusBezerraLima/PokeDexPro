@@ -4,11 +4,13 @@ const input = document.getElementById("inputBusca");
 const filtroBotao = document.getElementById("filtroBotao");
 const filtroMenu = document.getElementById("filtroMenu");
 let offset = 0, limite = 25, tipoSelecionado = null;
+
 const tipos = [
   "grass", "fire", "water", "bug", "normal", "poison", "electric",
   "ground", "fairy", "psychic", "rock", "ice", "ghost", "dragon",
   "dark", "steel", "fighting", "flying"
 ];
+
 const criarFiltro = () => {
   tipos.forEach((tipo) => {
     const item = document.createElement("div");
@@ -25,6 +27,7 @@ const criarFiltro = () => {
 filtroBotao.addEventListener("click", () => {
   filtroMenu.classList.toggle("expanded");
 });
+
 const buscarPokemon = async (idOuNome) => {
   try {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${idOuNome}`);
@@ -36,16 +39,20 @@ const buscarPokemon = async (idOuNome) => {
 
 const criarCard = (pokemon) => {
   const tipoPrincipal = pokemon.types[0].type.name;
-  grid.innerHTML += `
-    <div class="cardPokemon" style="background: linear-gradient(to bottom, ${obterCor(tipoPrincipal)} 40%, #1e1e1e 100%)">
-      <div class="numero">#${pokemon.id.toString().padStart(3, "0")}</div>
-      <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
-      <div class="info">
-        <div class="nome">${pokemon.name}</div>
-        <div class="tipos">${pokemon.types.map((t) => `<div class="tipo ${t.type.name}">${t.type.name}</div>`).join("")}</div>
-      </div>
-    </div>`;
+  const card = document.createElement("div");
+  card.className = "cardPokemon";
+  card.style.background = `linear-gradient(to bottom, ${obterCor(tipoPrincipal)} 40%, #1e1e1e 100%)`;
+  card.innerHTML = `
+    <div class="numero">#${pokemon.id.toString().padStart(3, "0")}</div>
+    <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+    <div class="info">
+      <div class="nome">${pokemon.name}</div>
+      <div class="tipos">${pokemon.types.map((t) => `<div class="tipo ${t.type.name}">${t.type.name}</div>`).join("")}</div>
+    </div>
+  `;
+  grid.appendChild(card);
 };
+
 const carregarPokemons = async () => {
   for (let i = offset + 1; i <= offset + limite; i++) {
     const pokemon = await buscarPokemon(i);
@@ -53,6 +60,7 @@ const carregarPokemons = async () => {
   }
   offset += limite;
 };
+
 const filtrarPorTipo = async (tipo) => {
   tipoSelecionado = tipo;
   grid.innerHTML = "";
@@ -65,6 +73,7 @@ const filtrarPorTipo = async (tipo) => {
   }
   filtroMenu.classList.remove("expanded");
 };
+
 const obterCor = (tipo) => ({
   grass: "#78c850", fire: "#f08030", water: "#6890f0", bug: "#a8b820",
   normal: "#a8a878", poison: "#a040a0", electric: "#f8d030", ground: "#e0c068",
@@ -72,6 +81,7 @@ const obterCor = (tipo) => ({
   dragon: "#7038f8", ghost: "#705898", dark: "#705848", steel: "#b8b8d0",
   fighting: "#c03028", flying: "#a890f0"
 }[tipo] || "#ccc");
+
 input.addEventListener("input", async () => {
   const busca = input.value.trim().toLowerCase();
   grid.innerHTML = "";
@@ -83,5 +93,8 @@ input.addEventListener("input", async () => {
     carregarPokemons();
   }
 });
+
+carregarMais.addEventListener("click", carregarPokemons);
+
 carregarPokemons();
 criarFiltro();

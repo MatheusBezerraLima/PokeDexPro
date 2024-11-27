@@ -187,33 +187,58 @@ body{
   .box-graph{
     width: 100%;
     height: 60%;
-    background-color: red;
+    align-self: flex-start;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-bottom: 5px;
   }
   .slide-stats{
     min-height: fit-content;
-    background-color: red;
   }
   .resistencia{
     width: 100%;
     height: 40%;
-    background-color: rgb(62, 60, 60);
+    color: rgb(62, 60, 60);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 100px; 
-  }
+    box-sizing: border-box;
+   }
 
   .item{
-    background-color: blue;
     display: flex;
     flex-direction: column;
+    height: 90%;
+    width: 95%;
+    max-width: ;
+    max-height: 90%;
+    border-radius:5px;
+    overflow: hidden;
   }
   .title-item{
     height: fit-content;
     width: 100%;
     font-size: 1rem;
+    background-color: #2F2F2E;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 3px;
+    padding-left: 5px;
   }
   .content-item{
     width: 100%;
     height: 90%;
-    background-color: #2EB1DD;
+    padding: 3px 3px 10px 3px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2px;
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos no cálculo */
+    background-color: #9e9e9e5f;
+  }
+
+  .icon{
+    width: 25px;
   }

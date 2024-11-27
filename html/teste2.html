@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Resistência do Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tipos de Resistência do Pokémon</h1>
+    <p>Digite o nome de um Pokémon para descobrir seus tipos de resistência e fraqueza:</p>
+    <input type="text" id="pokemonName" placeholder="Digite o nome do Pokémon">
+    <button onclick="fetchPokemonTypes()">Buscar</button>
+
+    <h2>Resultados:</h2>
+    <div>
+        <h3>Resistências (½ de dano):</h3>
+        <ul id="resistances"></ul>
+
+        <h3>Imunidades (sem dano):</h3>
+        <ul id="immunities"></ul>
+
+        <h3>Fraquezas (2x dano):</h3>
+        <ul id="weaknesses"></ul>
+
+        <h3>Dano Normal:</h3>
+        <ul id="normalDamage"></ul>
+    </div>
+
+    <script>
+        async function fetchPokemonTypes() {
+            const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
+            const resistances = document.getElementById('resistances');
+            const immunities = document.getElementById('immunities');
+            const weaknesses = document.getElementById('weaknesses');
+            const normalDamage = document.getElementById('normalDamage');
+
+            // Limpar resultados anteriores
+            resistances.innerHTML = '';
+            immunities.innerHTML = '';
+            weaknesses.innerHTML = '';
+            normalDamage.innerHTML = '';
+
+            if (!pokemonName) {
+                resistances.innerHTML = '<li class="error">Por favor, insira um nome de Pokémon.</li>';
+                return;
+            }
+
+            try {
+                // 1. Obtenha os tipos do Pokémon
+                const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+                if (!pokemonResponse.ok) throw new Error('Pokémon não encontrado.');
+                const pokemonData = await pokemonResponse.json();
+                const types = pokemonData.types.map(type => type.type.name);
+
+                const damageRelations = {
+                    half_damage_from: new Set(),
+                    double_damage_from: new Set(),
+                    no_damage_from: new Set(),
+                    normal_damage: new Set(),
+                };
+
+                // 2. Para cada tipo, busque as relações de dano
+                for (const type of types) {
+                    const typeResponse = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+                    const typeData = await typeResponse.json();
+
+                    // Adicione as relações de dano
+                    typeData.damage_relations.half_damage_from.forEach(t => damageRelations.half_damage_from.add(t.name));
+                    
+                    typeData.damage_relations.double_damage_from.forEach(t => damageRelations.double_damage_from.add(t.name));
+
+                    typeData.damage_relations.no_damage_from.forEach(t => damageRelations.no_damage_from.add(t.name));
+
+                    // Determine os tipos com dano normal
+                    const allTypes = Array.from({ length: 18 }, (_, i) => i + 1); // IDs de todos os tipos (1-18)
+                    const allTypeNames = await Promise.all(
+                        allTypes.map(async id => {
+                            const typeResponse = await fetch(`https://pokeapi.co/api/v2/type/${id}`);
+                            const typeData = await typeResponse.json();
+                            return typeData.name;
+                        })
+                    );
+
+                    allTypeNames.forEach(t => {
+                        if (
+                            !damageRelations.half_damage_from.has(t) &&
+                            !damageRelations.double_damage_from.has(t) &&
+                            !damageRelations.no_damage_from.has(t)
+                        ) {
+                            damageRelations.normal_damage.add(t);
+                        }
+                    });
+                }
+
+                // 3. Preencher as listas com os resultados
+                damageRelations.half_damage_from.forEach(type => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = type;
+                    resistances.appendChild(listItem);
+                });
+
+                damageRelations.no_damage_from.forEach(type => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = type;
+                    immunities.appendChild(listItem);
+                });
+
+                damageRelations.double_damage_from.forEach(type => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = type;
+                    weaknesses.appendChild(listItem);
+                });
+
+                damageRelations.normal_damage.forEach(type => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = type;
+                    normalDamage.appendChild(listItem);
+                });
+
+            } catch (error) {
+                resistances.innerHTML = `<li class="error">Erro: ${error.message}</li>`;
+            }
+        }
+    </script>
+</body>
+</html>

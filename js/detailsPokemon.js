@@ -119,3 +119,102 @@ new Chart(ctx, {
     }
   }
 });
+
+
+const typePokemon = async() => {
+  const boxNormalDamage = document.querySelector('#box-normal-damage')
+  const boxHalfDamage = document.querySelector('#box-half-damage')
+  const boxDoubleDamage = document.querySelector('#box-double-damage')
+  const boxNoDamage = document.querySelector('#box-no-damage')
+  boxNormalDamage.innerHTML = ''
+  console.log(boxNormalDamage);
+  
+  const pokemon = 'pikachu'
+
+  if(!pokemon){
+    alert('Por favor, insira um nome de pokemon')
+    return
+  }
+
+  try{
+    const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    if(!pokemonResponse.ok) throw new Error('Pokemon nao encontrado')
+    const pokemonData = await pokemonResponse.json()
+    console.log(pokemonData); 
+    const types = pokemonData.types.map(type => type.type.name)
+    console.log(types);
+    
+    const damageRelations = {
+      half_damage_from: new Set(),
+      double_damage_from: new Set(),
+      no_damage_from: new Set(),
+      normal_damage: new Set(),
+  };
+
+    for(const type of types){
+      const typeResponse =  await fetch(`https://pokeapi.co/api/v2/type/${type}`)
+      const typeData = await typeResponse.json()
+      console.log(typeData);
+      
+      typeData.damage_relations.half_damage_from.forEach(t =>
+        damageRelations.half_damage_from.add(t.name))
+    
+        console.log(damageRelations.half_damage_from);
+        
+      typeData.damage_relations.double_damage_from.forEach(t =>
+        damageRelations.double_damage_from.add(t.name))
+
+      typeData.damage_relations.no_damage_from.forEach(t =>
+      damageRelations.no_damage_from.add(t.name))
+
+      // Obtenha os nomes dos 18 tipos de Pokémon
+      const allTypeNames = [];
+      for (let id = 1; id <= 18; id++) {
+          const response = await fetch(`https://pokeapi.co/api/v2/type/${id}`);
+          const data = await response.json();
+          allTypeNames.push(data.name);
+      }
+          allTypeNames.forEach(t => {
+            if (
+                !damageRelations.half_damage_from.has(t) &&
+                !damageRelations.double_damage_from.has(t) &&
+                !damageRelations.no_damage_from.has(t)
+            ) {
+                damageRelations.normal_damage.add(t);
+            }
+        });
+
+      damageRelations.normal_damage.forEach(type => {
+        const listItem = document.createElement('img');
+        listItem.classList.add('icon');
+        listItem.src = `../icons/${type}.svg`
+        boxNormalDamage.appendChild(listItem);
+      });
+      damageRelations.double_damage_from.forEach(type => {
+        const listItem = document.createElement('img');
+        listItem.classList.add('icon');
+        listItem.src = `../icons/${type}.svg`
+        boxDoubleDamage.appendChild(listItem);
+      });
+      damageRelations.half_damage_from.forEach(type => {
+        const listItem = document.createElement('img');
+        listItem.classList.add('icon');
+        listItem.src = `../icons/${type}.svg`
+        boxHalfDamage.appendChild(listItem);
+      });
+      damageRelations.no_damage_from.forEach(type => {
+        const listItem = document.createElement('img');
+        listItem.classList.add('icon');
+        listItem.src = `../icons/${type}.svg`
+        boxNoDamage.appendChild(listItem);
+    });
+ 
+    }
+ 
+    }catch{
+      console.error()
+      
+    }
+}
+
+typePokemon()

@@ -59,3 +59,63 @@ buttons.forEach((button, index) => {
     button.classList.remove('disable')
   });
 });
+
+
+var ctx = document.querySelector('.slide-stats');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['HP', 'Attack', 'Defence', 'Sp.atk', 'Sp.def', 'Speed'],
+    datasets: [
+      {
+        label: 'Preenchido',
+        data: [20, 45, 10, 50, 20, 60], // Valores reais
+        backgroundColor: 'green'
+      },
+      {
+        label: 'Vazio',
+        data: [80, 55, 90, 50, 80, 40], // Espaço restante para completar 100
+        backgroundColor: 'rgba(0, 0, 0, 0.1)' // Cor semi-transparente ou invisível
+      }
+    ]
+  },
+  options: {
+    plugins: {
+      legend: {
+        display: false // Oculta a legenda completamente
+      },
+      tooltip: {
+        // Filtra tooltips para mostrar apenas quando o mouse passar sobre a parte verde
+        callbacks: {
+          label: function(tooltipItem) {
+            // Exibe o valor do dataset 'Preenchido' (parte verde)
+            if (tooltipItem.datasetIndex === 0) {
+              return tooltipItem.raw; // Mostra o valor da parte verde
+            }
+            return null; // Não exibe tooltip para a parte cinza
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        stacked: true, // Ativa empilhamento no eixo Y
+        beginAtZero: true,
+        grid: {
+          display: false,
+        },
+        max: 100, // Limite máximo para simular preenchimento total
+        ticks: {
+          display: false // Remove os valores do eixo Y
+        }
+      },
+      x: {
+        stacked: true, // Ativa empilhamento no eixo X
+        grid: {
+          display: false,
+        },
+      }
+    }
+  }
+});

@@ -31,18 +31,43 @@
 
         <div class="slider">
             <div class="controls">
-              <button data-slide="0" class="disable">Sobre</button>
+              <button data-slide="0" class="active  ">Sobre</button>
               <button data-slide="1" class="disable">Status</button>
               <button data-slide="2" class="disable">Moves</button>
             </div>
             <div class="slides">
               <div class="slide" id="slide1">Slide 1</div>
-              <div class="slide" id="slide2">Slide 2</div>
+              <div class="slide" id="slide2">   
+                <div class="box-graph">
+                    <canvas class="slide-stats"  id="slide2">
+                </div>
+                <div class="resistencia">
+                    <div class="item">
+                        <div class="title-item">Fraco contra:</div>
+                        <div class="content-item"></div>
+                    </div>
+                    <div class="item">
+                        <div class="title-item">Resistante contra:</div>
+                        <div class="content-item"></div>
+                    </div>
+                    <div class="item">
+                        <div class="title-item">Muito resistente contra:</div>
+                        <div class="content-item"></div>
+                    </div>
+                    <div class="item">
+                        <div class="title-item">Dano normal contra:</div>
+                        <div class="content-item"></div>
+                    </div>
+                </div>
+              </div>
+              </canvas>
               <div class="slide" id="slide3">Slide 3</div>
             </div>
             
           </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

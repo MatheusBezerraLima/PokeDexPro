@@ -39,7 +39,8 @@
   #inputBusca {
     width: 55vw;
     max-width: 100%;
-    height: 1.5em;
+    height: 54px;
+    max-height: 54px;
     padding: 0.7em 0.5em;
     border: 1px solid #444;
     border-radius: 0.5em;
@@ -47,6 +48,7 @@
     color: white;
     font-size: 1.12em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
   }
   
   #inputBusca:focus {
@@ -56,7 +58,8 @@
   
   main {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1025px;
+    min-width: 1025px;
     margin: 0 auto;
     position: relative;
     padding-bottom: 80px;
@@ -64,7 +67,7 @@
   
   #gridPokemons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
   
@@ -90,6 +93,8 @@
     left: 50%;
     width: 80%;
     height: 80%;
+    max-width: 241.25px;
+    min-width: 241.25px;
     transform: translate(-50%, -50%);
     background: url("../images/image\ 37.png") no-repeat center;
     background-size: contain;
@@ -119,7 +124,9 @@
     background-color: #504f4f;
     padding: 0.2em;
     border-radius: 0.3em;
+    z-index: 990;
   }
+  
   
   .cardPokemon .nome {
     font-size: 1.2em;
@@ -193,7 +200,8 @@
   #filtroBotao {
     display: flex;
     align-items: center;
-    width: 200%;
+    width: 80px;
+    min-width: 80px;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -201,7 +209,7 @@
     color: white;
     font-size: 1em;
     border: none;
-    border-radius: 0.7em;
+    border-radius: 0.4em;
     cursor: pointer;
     transition: background-color 0.3s;
   }
@@ -211,7 +219,7 @@
   }
   
   #filtroMenu{
-    z-index: 100;
+    z-index: 999;
     position: absolute;
     background-color: #1e1e1e;
     display: flex;
@@ -219,7 +227,9 @@
     gap: 0.3em;
     padding: 0.3em;
     border-radius: 0.5em;
-    min-width: auto;
+    min-width: 300px;
+    height: 500px;
+    flex-wrap: wrap;
     margin-top: 0.7em;
     display: none;
   }
@@ -256,9 +266,11 @@
     background-color: #ff6b6b;
     color: white;
     border: none;
+    max-height: 54px;
+    height: 54px;
     border-radius: 5px;
-    padding: 10px 15px;
-    margin-left: 15px;
+    padding: 10px 5px 10px 20px;
+    margin-left: -15px;
     cursor: pointer;
     transition: background-color 0.3s;
   }

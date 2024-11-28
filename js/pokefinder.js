@@ -6,7 +6,7 @@ const filtroMenu = document.getElementById("filtroMenu"); // menu que contém as
 const limparFiltro = document.getElementById("limparFiltro"); // botão para limpar o filtro aplicado
 let offset = 0, limite = 25, tipoSelecionado = null; // controle de paginação e tipo de filtro selecionado
 
-// Lista de tipos de pokémons para criar os filtros dinamicamente
+//lista de tipos de pokémons para criar os filtros dinamicamente
 const tipos = [
   "grass", "fire", "water", "bug", "normal", "poison", "electric", // tipos de pokémons comuns
   "ground", "fairy", "psychic", "rock", "ice", "ghost", "dragon", // tipos adicionais

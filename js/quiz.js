@@ -51,20 +51,30 @@ async function opcoes(certa) {
     }
 }
 
+function desativarBotoes() {
+    const botoes = document.querySelectorAll('.btnResp'); //seleciona todos os botões de resposta
+    botoes.forEach(btn => btn.disabled = true); //desativa todos os botões
+}
+
 function verifResp(btn, escolha) {
     const img = document.querySelector('.pkm_pic img'); //pega a imagem do pokémon
+    desativarBotoes(); //desativa os botões após o clique
     if (escolha === pkmAtual) { //se a escolha for correta
         btn.classList.add('acerto'); //adiciona a classe de acerto ao botão
         img.style.filter = 'brightness(1)'; //revela a imagem
         setTimeout(() => {
-            pkmAle(); //carrega outro pokémon após 1s
-        }, 1000);
+            pkmAle(); //carrega outro pokémon após 2s
+        }, 2000);
     } else { //se a escolha for errada
         btn.classList.add('erro'); //adiciona a classe de erro ao botão
+        const botoes = document.querySelectorAll('.btnResp'); //seleciona os botões
+        botoes.forEach(b => {
+            if (b.value === pkmAtual) b.classList.add('acerto'); //marca a resposta correta
+        });
         img.style.filter = 'brightness(1)'; //revela a imagem mesmo errando
         setTimeout(() => {
-            pkmAle(); //carrega outro pokémon após alguns segundos
-        }, 3000);
+            pkmAle(); //carrega outro pokémon após 2s
+        }, 2000);
     }
 }
 

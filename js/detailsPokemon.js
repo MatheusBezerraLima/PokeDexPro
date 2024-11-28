@@ -41,6 +41,10 @@
 
 // document.addEventListener("DOMContentLoaded", loadDetails)
 
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+
+
 const slides = document.querySelector('.slides');
 const buttons = document.querySelectorAll('.controls button');
 

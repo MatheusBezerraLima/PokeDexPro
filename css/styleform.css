@@ -1,6 +1,9 @@
 *{
     margin:0;
     border:0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .container{
@@ -9,7 +12,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-image: url(../images/background-form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container-form{
     display: flex;
@@ -18,9 +23,8 @@
     align-items: center;
     width:52%;
     height: 90%;
-    background-color: beige;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    background-color: #0C1033;
+   border-radius:20px;
 
 }
 .lado-esq{
@@ -38,12 +42,88 @@
 .lado-dir{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width:49%;
     height: 99%;
-    background-color: beige;
 }
 .formulario{
-    width:80%;
-    height: 50%;
-    background-color: red;
+    width:75%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    width:255px;
+    max-width: 100%;
+    color: #F2F2F2;
+    font-weight: bold;
+}
+.formulario input, button{
+    width:255px;
+    max-width: 255px;
+    max-height: 100%;
+    height: 28px;
+    margin-bottom:25px;
+    border-radius: 5px;
+
+}
+.formulario form{
+    display: flex;
+    flex-direction: column;
+}
+.formulario input{
+    background-color: #83859e;
+    border: 1px ;
+    caret-color: white;
+}
+input::placeholder{
+    color:#b1b0b0;
+    margin-left: 10px;
+    font-style: italic;
+    font-size:0.8em;
+    padding: 10px;
+}
+input:focus{
+    outline: none;
+    color: #97979b;
+}
+.formulario label{
+    color: #BFBFBF;
+    font-size:0.8em;
+}
+.formulario button{
+    font-weight: bold;
+    background-color: #8e2fa8;
+    color:#F2F2F2;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.formulario button:hover{
+    background-color: #460575;
+
+}
+.formulario p{
+    color:#F2F2F2
+
+}
+.icons-form{
+    display: flex;
+    justify-content: space-around;
+    width:60%;
+    height: auto;   
+     margin-top:25px;
+   
+}
+.icons-form img{
+    width:25px;
+    cursor: pointer;
+
+}
+
+.lado-dir h3{
+    align-self:flex-start;
 }

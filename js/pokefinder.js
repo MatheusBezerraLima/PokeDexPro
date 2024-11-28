@@ -42,8 +42,26 @@ const buscarPokemon = async (idOuNome) => { // função para buscar um pokémon 
 const criarCard = (pokemon) => { // função para criar e adicionar um card de pokémon
   const tipoPrincipal = pokemon.types[0].type.name; // pega o tipo principal do pokémon
   const card = document.createElement("div"); // cria um elemento de card
+  
   card.className = "cardPokemon"; // classe para estilizar o card
   card.style.background = `linear-gradient(to bottom, ${obterCor(tipoPrincipal)} 40%, #1e1e1e 100%)`; // define a cor de fundo do card
+
+  card.setAttribute('data-name', pokemon.name)
+  card.addEventListener("click", () => {
+    
+    // Obtém o dado (neste caso, do atributo `data-valor`)
+    const name = card.getAttribute("data-name");
+    const body = document.querySelector("body");
+
+    // Adiciona a classe para o efeito de saída
+    body.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location.href = `./pokemonMain.html?name=${encodeURIComponent(name)}`;
+    }, 500); 
+
+  });
+
   card.innerHTML = `
     <div class="numero">#${pokemon.id.toString().padStart(3, "0")}</div> <!-- mostra o número do pokémon -->
     <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}"> <!-- imagem do pokémon -->
@@ -124,3 +142,5 @@ carregarMais.addEventListener("click", carregarPokemons); // evento de clique pa
 
 carregarPokemons(); // carrega os pokémons iniciais
 criarFiltro(); // cria os filtros de tipo
+
+

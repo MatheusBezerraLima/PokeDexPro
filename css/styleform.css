@@ -59,6 +59,7 @@
     width:255px;
     max-width: 100%;
     color: #F2F2F2;
+    font-weight: bold;
 }
 .formulario input, button{
     width:255px;
@@ -75,6 +76,19 @@
 }
 .formulario input{
     background-color: #83859e;
+    border: 1px ;
+    caret-color: white;
+}
+input::placeholder{
+    color:#b1b0b0;
+    margin-left: 10px;
+    font-style: italic;
+    font-size:0.8em;
+    padding: 10px;
+}
+input:focus{
+    outline: none;
+    color: #97979b;
 }
 .formulario label{
     color: #BFBFBF;
@@ -85,9 +99,12 @@
     background-color: #8e2fa8;
     color:#F2F2F2;
     height: 35px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 .formulario button:hover{
-    
+    background-color: #460575;
+
 }
 .formulario p{
     color:#F2F2F2
@@ -103,6 +120,7 @@
 }
 .icons-form img{
     width:25px;
+    cursor: pointer;
 
 }
 

@@ -175,8 +175,8 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    font-size: 14px;
+    padding: 3em 0;
+    font-size: 1em;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   }
   
@@ -187,7 +187,7 @@
   
   #filtroContainer {
     position: relative;
-    margin-left: 20px;
+    margin-left: 1em;
   }
   
   #filtroBotao {
@@ -250,6 +250,21 @@
     font-size: 14px;
     color: white;
     text-transform: capitalize;
+  }
+
+  #limparFiltro {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #limparFiltro:hover {
+    background-color: #d9534f;
   }
   
   .tipo.grass {

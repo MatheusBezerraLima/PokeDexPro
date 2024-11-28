@@ -1,39 +1,49 @@
-body{
+*{
+    margin:0;
+    border:0;
+}
+
+.container{
+    width:100%;
+    height: 100vh;
     display: flex;
-    height: 100dvh;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
-main{
+.container-form{
     display: flex;
     flex-direction: row;
-    width: fit-content;
-    min-width: 580px;
-    height: 495px;
+    justify-content: center;
     align-items: center;
-    gap: -1000px;
-    background-color: yellow;
-    position: relative;
-    padding: 0;
+    width:52%;
+    height: 90%;
+    background-color: beige;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
 }
-/* .container-form{
-    background-color: green;
-    width: 300px;
+.lado-esq{
+    width:49%;
+    height: 98%;
+
+}
+.lado-esq img{
+    width: 100%;
     height: 100%;
-} */
-.svg-top{
-    transform: rotate(-90deg);
-    background-color: blue;
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    left:0 ;
+    object-fit: fill;
+    background-size: contain;
+    border-radius:20px;
 }
-.svg-bottom{
-    transform: rotate(90deg);
-    background-color: blue;
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-   
+.lado-dir{
+    display: flex;
+    flex-direction: column;
+    width:49%;
+    height: 99%;
+    background-color: beige;
+}
+.formulario{
+    width:80%;
+    height: 50%;
+    background-color: red;
 }

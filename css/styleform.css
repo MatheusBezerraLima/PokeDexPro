@@ -38,12 +38,37 @@
 .lado-dir{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width:49%;
     height: 99%;
-    background-color: beige;
+    background-color: #E4E4E8;
 }
 .formulario{
     width:80%;
-    height: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: red;
+   
+ 
+}
+.formulario input, button{
+    width:100%;
+    height: 35px;
+    margin-bottom:15px;
+
+}
+.formulario p{
+
+}
+.icons-form{
+    width:80%;
+    height: auto;
+    background-color: aqua;
+}
+
+.lado-dir h3{
+    align-self:flex-start;
 }

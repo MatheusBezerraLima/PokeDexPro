@@ -1,0 +1,18 @@
+footer{
+    width: 100%;
+    height: 25vh;
+    background-color: #232222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: #fff;
+}
+footer img{
+    height: 80%;
+}
+footer h1 {
+    font-size: 1em;
+    flex-direction: column;
+    max-width: 30%;
+}

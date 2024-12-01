@@ -26,6 +26,12 @@ function escuro(urlImg) {
     img.style.filter = 'brightness(0)'; //deixa a imagem escura para simular uma silhueta
 }
 
+function tocarSom(nome) {
+    const audioURL = `https://play.pokemonshowdown.com/audio/cries/${nome}.mp3`; //URL do som do Pokémon
+    const audio = new Audio(audioURL); //cria um objeto de áudio
+    audio.play().catch(err => console.error("Erro ao reproduzir som:", err)); //reproduz o som
+}
+
 async function opcoes(certa) {
     try {
         const resp = await fetch(`${baseURL}?limit=${maxPkm}`); //busca todos os pokémon da api
@@ -62,9 +68,6 @@ function verifResp(btn, escolha) {
     if (escolha === pkmAtual) { //se a escolha for correta
         btn.classList.add('acerto'); //adiciona a classe de acerto ao botão
         img.style.filter = 'brightness(1)'; //revela a imagem
-        setTimeout(() => {
-            pkmAle(); //carrega outro pokémon após 2s
-        }, 2000);
     } else { //se a escolha for errada
         btn.classList.add('erro'); //adiciona a classe de erro ao botão
         const botoes = document.querySelectorAll('.btnResp'); //seleciona os botões
@@ -72,10 +75,13 @@ function verifResp(btn, escolha) {
             if (b.value === pkmAtual) b.classList.add('acerto'); //marca a resposta correta
         });
         img.style.filter = 'brightness(1)'; //revela a imagem mesmo errando
-        setTimeout(() => {
-            pkmAle(); //carrega outro pokémon após 2s
-        }, 2000);
     }
+
+    tocarSom(pkmAtual); //toca o som do Pokémon após escolher a opção
+
+    setTimeout(() => {
+        pkmAle(); //carrega outro pokémon após 2s
+    }, 2000);
 }
 
 document.addEventListener('DOMContentLoaded', () => { 

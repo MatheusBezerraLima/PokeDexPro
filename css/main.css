@@ -212,6 +212,8 @@ section.regions-pokemon{
     height:350px;
     display: flex;
     background-color: transparent;
+    cursor: pointer;
+    box-shadow: ;
 }
 
 .card img{
@@ -246,6 +248,9 @@ section.regions-pokemon{
 .modal-content span{
     float: right;
     cursor: pointer;
+    width:10px;
+    height: 10px;
+    background-color: gray;
 }
 .show-modal{
     opacity: 1;

@@ -10,9 +10,9 @@
 
     <link rel="stylesheet" href="../css/standard.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/main2.css">
 
     <script src="../js/main.js"></script>
+    <script src="../js/main2.js" defer></script>
    
     <title>Pokemon main | Pokédex Pro</title>
 </head>
@@ -35,7 +35,7 @@
             <img src="../images/logoHeader.png" alt="">
             <ul>
                 <li>About</li>
-                <li>Pokedex</li>
+                <a href="../html/pokefinder.html"><li>Pokedex</li></a>
                 <a href="../html/form.html"><li>Cadastro</li></a>
             </ul>
         </nav>
@@ -76,15 +76,15 @@
         </div>
 
         <div class="character-container">
-                <div class="card">
-                    <img src="../images/card-misty.png" alt="">
+                <div class="card" onclick="showModal('Misty', 'Uma treinadora especializada em Pokémon do tipo água.')">
+                    <img src="../images/card-misty.png" >
                 </div> <!--card-->
 
-                <div class="card">
+                <div class="card"  onclick="showModal('Ash')">
                   <img src="../images/card-ash.png" alt="">
                 </div> <!--card-->
 
-                <div class="card">
+                <div class="card" onclick="showModal('Brock')">
                   <img src="../images/card-brock.png" alt="">
                 </div> <!--card-->
 
@@ -92,12 +92,16 @@
        
     </section>
 
-    <div class="modal">
+    <div class="modal" id="modal">
         <div class="modal-content">
-            <span>&times;</span>
-            <h1>hello word</h1>
+            <span onclick="hideModal()">&times;</span>
+            <h1 id="modal-title">hello word</h1>
+            <p id="modal-text"></p>
         </div>
     </div>
+
+
+<!-- Regiões-->
 
     <section class="regions-pokemon">
         <div class="title-section">
@@ -170,7 +174,7 @@
     <script>
         VanillaTilt.init(document.querySelectorAll(".card img")), {
             max: 25,
-            speed: 400,
+            speed: 500,
             glare: true,
             "max-glare": 0.5
             

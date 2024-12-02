@@ -180,11 +180,13 @@ section.regions-pokemon{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient( 0.1deg,  rgba(21,13,15,1) 10.2%, rgba(21,13,15,0.70) 99.8%, rgba(21,13,15,0.29) 121.2% );
+    background-image: url(../images/background-home.jpg);
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    
 
 }
 .topo-characters{
@@ -203,66 +205,57 @@ section.regions-pokemon{
     width:70%;
     height: 70%;
     gap:20px;
-
- 
-}
-
-.flip {
-    perspective: 1000px; 
-    width: 200px; /* Define um tamanho consistente */
-    height: 300px;
 }
 
 .card {
-    position: relative;
-    width: 200px;
-    height: 300px;
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    transition: transform 0.6s ease-in-out;
+    width:250px;
+    height:350px;
+    display: flex;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.flip:hover .card{
-    transform: rotateY(180deg);
+.card img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    box-shadow: 5px 2px 10px rgb(170, 168, 168);
 }
-
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
+.modal{
+    padding: 0;
+    left: 0;
+    top: 0;
     height: 100%;
-    backface-visibility: hidden; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.card-front img {
     width: 100%;
-    height: auto;
-}
-
-.card-back {
-    background-color: #FF5B17;
-    color: white;
-    transform: rotateY(180deg); 
+    background-color: rgb(0,0,0,0.5);
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
+    transform: scale(1.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.25s ease-in-out, transform 0.25s ease-in-out,opacity 0.25s ease-in-out;
+}
+.modal-content{
+    width:400px;
+    height:300px;
+    background-color: white;
+    border-radius:0.5rem;
+    padding: 20px 20px;
+
+}
+.modal-content span{
+    float: right;
+    cursor: pointer;
+    width:10px;
+    height: 10px;
+    background-color: gray;
+}
+.show-modal{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
 }
 
-.character-name{
-    position: absolute; 
-    bottom: 30px;   
-    left:10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
-    text-align: center;
-}
+

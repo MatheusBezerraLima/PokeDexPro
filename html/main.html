@@ -72,41 +72,17 @@
         </div>
 
         <div class="character-container">
-            <div class="flip">
                 <div class="card">
-                    <div class="card-front">
-                        <img src="../images/brock-card.png" alt="">
-                      <p class="character-name">BROCK</p>
-                    </div> <!--card-front-->
-                    <div class="card-back">
-                        
-                    </div> <!--card-back-->
+                    <img src="../images/card-misty.png" alt="">
                 </div> <!--card-->
-            </div> <!--flip-->
 
-            <div class="flip">
                 <div class="card">
-                    <div class="card-front">
-                        <img src="../images/ash-card.png" alt="">
-                        <p class="character-name">BROCK</p>
-                    </div> <!--card-front-->
-                    <div class="card-back">
-                        
-                    </div> <!--card-back-->
+                  <img src="../images/card-ash.png" alt="">
                 </div> <!--card-->
-            </div> <!--flip-->
 
-            <div class="flip">
                 <div class="card">
-                    <div class="card-front">
-                        <img src="../images/misty-card.png" alt="">
-                        <p class="character-name">BROCK</p>
-                    </div> <!--card-front-->
-                    <div class="card-back">
-                        
-                    </div> <!--card-back-->
+                  <img src="../images/card-brock.png" alt="">
                 </div> <!--card-->
-            </div> <!--flip-->
 
         </div> <!--character-container -->
        
@@ -178,6 +154,17 @@
             <i class="fa-solid fa-angle-right icon-angle" onclick="moveCardRegions(this)"></i>
         </div>
     </section>
+
+    <script src="../js/vanilla-tilt.js "></script>    
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card img")), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5
+            
+        };
+    </script>
 </body>
 </html>
 

@@ -1,4 +1,6 @@
 body{
+    display: flex;
+    flex-direction: column;
 }
 
 main{
@@ -200,6 +202,7 @@ section.regions-pokemon{
     font-size: 1.5em;
     margin-top:20px;
     color: white;
+    font-family:  "Russo One", sans-serif;;
     
 }
 .character-container{
@@ -248,10 +251,8 @@ section.regions-pokemon{
     flex-direction: column;
     width:400px;
     height:400px;
-    background: #abbaab;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-image: url(../images/background-popuop.jpg);
+    background-size: cover;
     border-radius:0.5rem;
     padding: 20px 20px;
     text-align: justify;
@@ -273,9 +274,61 @@ section.regions-pokemon{
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
+    
 }
 #modal-text{
     margin-top: 20px;
+    color: #E4E4E8;
 }
+#modal-title{
+    color:#E4E4E8;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:300px;
+    background-color: #121258;
+
+    & .container-footer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width:600px;
+        height: 200px;
+  
+    }
+    & img{
+        width:200px;
+    }
+    & .links-footer{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        gap:20px;
+        height: auto;
+        margin-top: 80px;
+        
+    }
+    & .links-footer a{
+        color: #E4E4E8;
+    }
+
+}
+.credits{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#7c7c7c;
+    background-color:#121258;
+    border-top: 1px solid #4444ac;
+    gap:20px;
+    font-size:0.8em;
+}
+
 
 

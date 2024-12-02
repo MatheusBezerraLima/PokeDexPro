@@ -43,26 +43,38 @@ const returnPreviousPage = () =>{
   window.history.back();
 }
 
-const addPokemonTeam = () =>{
-  const namePokemon = document.querySelector('.name-pokemon').innerHTML
+const addPokemonTeam = () => {
+  const namePokemon = document.querySelector('.name-pokemon').innerHTML;
 
-  if(pokemonsTeam.length > 4){
-    alert('equipe cheia')
-    return
+  // Verifica se o time já tem 5 Pokémons
+  if (pokemonsTeam.length >= 5) {
+    // Exibe a mensagem visual se o time já tiver 5 Pokémons
+    const messageElement = document.getElementById('pokemon-limit-message');
+    messageElement.style.display = 'block';
+
+    // Esconde a mensagem após 3 segundos
+    setTimeout(() => {
+      messageElement.style.display = 'none';
+    }, 3000);
+    
+    return;
   }
 
-  pokemonsTeam.push(namePokemon)
+  // Adiciona o Pokémon ao time
+  pokemonsTeam.push(namePokemon);
 
-  if (JSON.parse(localStorage.getItem('teamPokemon'))){
-    localStorage.removeItem('teamPokemon');
+  // Verifica se já existe um time salvo no localStorage
+  const existingTeam = JSON.parse(localStorage.getItem('teamPokemon'));
+
+  if (existingTeam) {
+    // Atualiza o time no localStorage
     localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
-    return
+  } else {
+    // Cria um novo time no localStorage
+    localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
   }
+};
 
-  localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
-  
-
-}
 
 buttons.forEach((button, index) => {
   button.addEventListener('click', () => {

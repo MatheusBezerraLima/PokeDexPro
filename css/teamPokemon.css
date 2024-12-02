@@ -1,3 +1,26 @@
+:root {
+    --grass: linear-gradient(0deg, #3AAC53 0%, #5DC67C 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --bug: linear-gradient(0deg, #397446 0%, #5C9764 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --fire: linear-gradient(0deg, #DD742E 0%, #E88F56 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --fighting: linear-gradient(0deg, #db1c1c 0%, #E44A4A 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --fairy: linear-gradient(0deg, #FC72C0 0%, #FF9BD7 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --psychic: linear-gradient(0deg, #CB42AE 0%, #E06BC8 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --poison: linear-gradient(0deg, #A04EC9 0%, #BE75DD 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --ghost: linear-gradient(0deg, #5F12A2 0%, #803BC2 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --electric: linear-gradient(0deg, #ecdb24 0%, #F5E94F 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --steel: linear-gradient(0deg, #7A8E95 0%, #9EAFB3 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --normal: linear-gradient(0deg, #4E575A 0%, #6E7D80 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --flying: linear-gradient(0deg, #B4BEC1 0%, #D1D8DA 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --dark: linear-gradient(0deg, #2F2F2E 0%, #494948 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --ground: linear-gradient(0deg, #63432E 0%, #84614B 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --rock: linear-gradient(0deg, #826030 0%, #A17D4C 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --dragon: linear-gradient(0deg, #2A5CC9 0%, #4E7EDF 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --water: linear-gradient(0deg, #2EB1DD 0%, #54C9ED 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --ice: linear-gradient(0deg, #8BDCF7 0%, #ACEDFA 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --padrao: linear-gradient(0deg, #1a1a1a 0%, #333333 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  
 body{
     width: 100%;
     height: 100vh;
@@ -22,8 +45,6 @@ body{
     width: 250px;
     min-width: 200px;
     height: 300px;
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgb(202, 94, 6) 0%, rgb(207, 82, 20) 35%, rgba(255, 255, 255, 0) 90%,  rgba(255, 255, 255, 0) 100%);
     border-radius: 10px ;
 }
 
@@ -66,6 +87,7 @@ body{
     align-items: center;
     justify-content: space-around;
     color: white;
+    text-transform: capitalize;
 }
 
 .stats-card-pokemon{
@@ -102,3 +124,18 @@ body{
     width: 30px;
     height: 30px;
 }
+
+.pokemon-message {
+    background-color: #FFCB05;
+    color: #3D7DCA;
+    font-family: 'Pokemon', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #3D7DCA;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  

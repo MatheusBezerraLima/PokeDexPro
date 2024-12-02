@@ -609,3 +609,18 @@ body{
     color: black;
     border-color: black;
   }
+
+  .pokemon-message {
+    background-color: #FFCB05;
+    color: #3D7DCA;
+    font-family: 'Pokemon', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #3D7DCA;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  

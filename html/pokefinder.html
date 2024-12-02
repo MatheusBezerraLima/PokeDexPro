@@ -2,31 +2,60 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/footer.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   <title>Pokedex</title>
   <link rel="stylesheet" href="../css/pokefinder.css">
 </head>
+
 <body>
   <header id="headerCustom">
     <h1>Pokéfinder</h1>
   </header>
+
   <section class="homepage">
     <section id="buscaContainer">
       <input type="text" id="inputBusca" placeholder="Buscar Pokémon por nome ou número...">
+
       <div id="filtroContainer">
+        
         <button id="filtroBotao">Filter</button>
         <div id="filtroMenu"></div>
+
       </div>
+
       <button id="limparFiltro">Limpar Filtro</button>
+
     </section>
     <main>
+
       <div id="gridPokemons"></div>
       <button id="carregarMais">Carregar mais ↓</button>
+
     </main>
   </section>
 
   <footer id="footerEditado">
-    <p>AAAAAAAAAAAA TESTE2</p>
+
+    <section class="f_logo">
+      <img src="../images/image 37.png" alt="">
+      <p class="s_name">PokéDexPro</p>
+  </section>
+
+  <section class="pkmc">
+      <p class="copy">Pokémon Company - GameFreak ₢</p>
+  </section>
+
+  <section class="cred">
+      <p class="c_name">
+          Por: <br> 
+          Enrico Hidalgo,
+          Kamilly Rodrigues,
+          Matheus B. Lima
+      </p>
+  </section>
+
   </footer>
   <script src="../js/pokefinder.js"></script>
 </body>

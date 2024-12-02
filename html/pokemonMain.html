@@ -12,15 +12,18 @@
 
 </head>
 <body class="page-transition">
-    <div class="box_gif_pokemon">
-        <img src="../images/charizard-flying.gif" alt="">
+    <img src="../icons/left.png" class="return-icon" onclick="returnPreviousPage()" alt="">
+    <div class="trapezoid"></div>
+
+    <div class="box_img_pokemon">
+        <img class="img_pokemon" src="" alt="">
     </div>
 
     <div class="box-details-pokemon">
         <div class="fixed-box">
             <div class="name-id-pokemon">
-                <h1>Rayquaza</h1>
-                <span class="id-pokemon">N° 0987</span>
+                <h1 class="name-pokemon"></h1>
+                <span class="id-pokemon">N° <span class="id">0987</span></span>
             </div>
             
             <div class="type-pokemon">
@@ -31,12 +34,43 @@
 
         <div class="slider">
             <div class="controls">
-              <button data-slide="0" class="active  ">Sobre</button>
+              <button data-slide="0" class="active">Sobre</button>
               <button data-slide="1" class="disable">Status</button>
               <button data-slide="2" class="disable">Moves</button>
             </div>
             <div class="slides">
-              <div class="slide" id="slide1">Slide 1</div>
+              <div class="slide" id="slide1">
+                <div class="general-infos">
+
+                    <div class="text-infos">
+                        <div class="box-text-pokemon">
+                            <h3>Description</h3><br>
+                            <p class="text-pokemon">
+                              
+                            </p>
+                        </div>
+
+                        <div class="weight-and-size">
+                            <div class="weight">
+                                <img src="../icons/weight.png" alt="">
+                                <p class="p-weight"></p>
+                            </div>
+                            <div class="size">
+                                <img src="../icons/heigth.png" alt="">
+                                <p class="p-size"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="percentage-sex">
+                        <canvas class="graph-percentage-sex"></canvas>
+                    </div>
+                </div>
+
+                <div class="evolution_chain">
+
+                </div>
+              </div>
 
               <div class="slide" id="slide2">   
                 <div class="box-graph">
@@ -68,10 +102,14 @@
               </div>
              
 
-              <div class="slide" id="slide3">Slide 3</div>
+              <div class="slide" id="slide3">
+               
+              </div>
             </div>
             
           </div>
+
+          <button class="button-add-team" onclick="addPokemonTeam()">Adicionar ao time +</button>
 
     </div>
 

@@ -1,0 +1,141 @@
+:root {
+    --grass: linear-gradient(0deg, #3AAC53 0%, #5DC67C 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --bug: linear-gradient(0deg, #397446 0%, #5C9764 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --fire: linear-gradient(0deg, #DD742E 0%, #E88F56 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --fighting: linear-gradient(0deg, #db1c1c 0%, #E44A4A 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --fairy: linear-gradient(0deg, #FC72C0 0%, #FF9BD7 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --psychic: linear-gradient(0deg, #CB42AE 0%, #E06BC8 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --poison: linear-gradient(0deg, #A04EC9 0%, #BE75DD 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --ghost: linear-gradient(0deg, #5F12A2 0%, #803BC2 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --electric: linear-gradient(0deg, #ecdb24 0%, #F5E94F 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --steel: linear-gradient(0deg, #7A8E95 0%, #9EAFB3 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --normal: linear-gradient(0deg, #4E575A 0%, #6E7D80 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --flying: linear-gradient(0deg, #B4BEC1 0%, #D1D8DA 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --dark: linear-gradient(0deg, #2F2F2E 0%, #494948 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --ground: linear-gradient(0deg, #63432E 0%, #84614B 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --rock: linear-gradient(0deg, #826030 0%, #A17D4C 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --dragon: linear-gradient(0deg, #2A5CC9 0%, #4E7EDF 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --water: linear-gradient(0deg, #2EB1DD 0%, #54C9ED 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --ice: linear-gradient(0deg, #8BDCF7 0%, #ACEDFA 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+    --padrao: linear-gradient(0deg, #1a1a1a 0%, #333333 35%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(72, 72, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-main{
+    width: 1200px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.card-pokemon{
+    width: 250px;
+    min-width: 200px;
+    height: 300px;
+    border-radius: 10px ;
+}
+
+.image-card-pokemon{
+    margin-top: -70px;
+
+}
+
+
+#card1{
+    width: 200px;
+    height: 250px;
+}
+
+#card2{
+    width: 250px;
+    height: 300px;
+}
+#card3{
+    width: 300px;
+    height: 350px;
+}
+#card4{
+    width: 250px;
+    height: 300px;
+}
+#card5{
+    width: 200px;
+    height: 250px;
+}
+
+
+
+.infos-card-pokemon{
+    width: 100%;
+    height: 135px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    text-transform: capitalize;
+}
+
+.stats-card-pokemon{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 10px;
+    height: 30px;
+    
+
+    & div{
+        width: 100px;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: 26px;
+
+        & p{
+            font-weight: normal;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+    }
+}
+
+
+
+.icon-card{
+    width: 100%;
+    width: 30px;
+    height: 30px;
+}
+
+.pokemon-message {
+    background-color: #FFCB05;
+    color: #3D7DCA;
+    font-family: 'Pokemon', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #3D7DCA;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  

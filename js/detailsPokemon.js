@@ -46,33 +46,34 @@ const returnPreviousPage = () =>{
 const addPokemonTeam = () => {
   const namePokemon = document.querySelector('.name-pokemon').innerHTML;
 
+  // Recupera o time existente do localStorage ou inicializa um novo array vazio
+  let pokemonsTeam = JSON.parse(localStorage.getItem('teamPokemon'));
+
+  if (!pokemonsTeam) {
+    // Cria a chave no localStorage se não existir
+    pokemonsTeam = [];
+    localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
+  }
+
   // Verifica se o time já tem 5 Pokémons
   if (pokemonsTeam.length >= 5) {
-    // Exibe a mensagem visual se o time já tiver 5 Pokémons
-    const messageElement = document.getElementById('pokemon-limit-message');
-    messageElement.style.display = 'block';
+    alert('Time cheio!');
+    return;
+  }
 
-    // Esconde a mensagem após 3 segundos
-    setTimeout(() => {
-      messageElement.style.display = 'none';
-    }, 3000);
-    
+  // Verifica se o Pokémon já está no time
+  if (pokemonsTeam.includes(namePokemon)) {
+    alert('Este Pokémon já está no time!');
     return;
   }
 
   // Adiciona o Pokémon ao time
   pokemonsTeam.push(namePokemon);
 
-  // Verifica se já existe um time salvo no localStorage
-  const existingTeam = JSON.parse(localStorage.getItem('teamPokemon'));
+  // Atualiza o time no localStorage
+  localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
 
-  if (existingTeam) {
-    // Atualiza o time no localStorage
-    localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
-  } else {
-    // Cria um novo time no localStorage
-    localStorage.setItem('teamPokemon', JSON.stringify(pokemonsTeam));
-  }
+  console.log('Time atualizado:', pokemonsTeam);
 };
 
 

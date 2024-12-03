@@ -325,6 +325,7 @@ class VanillaTilt {
 
     this.glareElementWrapper = this.element.querySelector(".js-tilt-glare");
     this.glareElement = this.element.querySelector(".js-tilt-glare-inner");
+    console.log(this.glareElement); // Deve exibir o elemento do glare
 
     if (this.glarePrerender) {
       return;

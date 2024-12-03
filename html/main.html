@@ -28,15 +28,15 @@
     <header>
         <nav>
             <ul>
-                <a href="../html/chatPokemon.html"><li>Chat</li></a>
-                <li>Pokedex</li>
-                <li>Batalha</li>
+                <a href="../html/main.html"><li>Home</li></a>
+                <a href="../html/pokefinder.html"><li>Pokedex</li></a>
+                <a href="../html/teamPokemon.html"><li>Equipe</li></a>
             </ul>
             <img src="../images/logoHeader.png" alt="">
             <ul>
-                <li>About</li>
-                <a href="../html/pokefinder.html"><li>Pokedex</li></a>
-                <a href="../html/form.html"><li>Cadastro</li></a>
+                <li>Comparador</li>
+                <a href="../html/chatPokemon.html"><li>Chat</li></a>
+                  <a href="../html/quiz.html"><li>Quiz</li></a>
             </ul>
         </nav>
     </header>
@@ -75,8 +75,8 @@
             <h1>Personagens Principais</h1>
         </div>
 
-        <div class="character-container">
-                <div class="card" onclick="showModal('Misty', 'Misty é uma das personagens principais da franquia Pokémon, conhecida por ser a líder de ginásio da cidade Cerulean, que é especializada em Pokémon do tipo Água. Ela é uma treinadora forte e determinada, com uma personalidade um pouco impetuosa, mas também muito leal aos seus amigos. Misty tem uma relação próxima com seus Pokémon, especialmente com o Starmie, Staryu e seu Pokémon de destaque, Gyarados.')">
+        <div class="character-container js-tilt-glare">
+                <div class="card js-tilt-glare-inner" onclick="showModal('Misty', 'Misty é uma das personagens principais da franquia Pokémon, conhecida por ser a líder de ginásio da cidade Cerulean, que é especializada em Pokémon do tipo Água. Ela é uma treinadora forte e determinada, com uma personalidade um pouco impetuosa, mas também muito leal aos seus amigos. Misty tem uma relação próxima com seus Pokémon, especialmente com o Starmie, Staryu e seu Pokémon de destaque, Gyarados.')">
                     <img src="../images/card-misty.png" >
                 </div> <!--card-->
 
@@ -176,7 +176,7 @@
             max: 25,
             speed: 500,
             glare: true,
-            "max-glare": 0.5
+            "max-glare": 2
             
         };
     </script>

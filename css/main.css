@@ -284,52 +284,5 @@ section.regions-pokemon{
 #modal-title{
     color:#E4E4E8;
 }
-.footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height:300px;
-    background-color: #121258;
-
-    & .container-footer{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width:600px;
-        height: 200px;
-  
-    }
-    & img{
-        width:200px;
-    }
-    & .links-footer{
-        width:100%;
-        display: flex;
-        justify-content: center;
-        gap:20px;
-        height: auto;
-        margin-top: 80px;
-        
-    }
-    & .links-footer a{
-        color: #E4E4E8;
-    }
-
-}
-.credits{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:#7c7c7c;
-    background-color:#121258;
-    border-top: 1px solid #4444ac;
-    gap:20px;
-    font-size:0.8em;
-}
-
 
 
